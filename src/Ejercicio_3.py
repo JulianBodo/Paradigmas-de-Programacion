@@ -4,7 +4,7 @@ articulos = []  # Lista para almacenar los artículos.
 
 # Opción 1, cargar datos.
 def ingresar(): 
-    print("\n■ \033[1mCARGA DE ARTÍCULOS:\033[0m")  # Título.
+    print("\n■ \033[1mCARGA DE ARTÍCULOS\033[0m")  # Título.
 
     for i in range(10):  # Iterar tres veces para tres artículos (o los que se especifique).
         articulo = [None] * 4  # Inicializar un nuevo artículo con 4 elementos vacíos.
@@ -23,7 +23,13 @@ def ingresar():
 
 # Opción 2, ver datos cargados.
 def cargados():
-    print("\n■ \033[1mARTÍCULOS CARGADOS:\033[0m")  # Título.
+    print("\n■ \033[1mARTÍCULOS CARGADOS\033[0m")  # Título.
+
+    # Verificar si hay datos cargados.
+    if not articulos:
+        print("\nNo hay artículos cargados.\n")
+        return  # Salir de la función si no hay datos cargados.
+    
     for idx, articulo in enumerate(articulos, start=1): # Imprimir los datos de todos los artículos.
         print("\n"f"● \033[4mArtículo {idx}\033[0m:")
         print("     ╠○ Código:", articulo[0])
@@ -41,7 +47,12 @@ def cargados():
 
 # Opción 3, mostrar un resumen de los artículos cargados con las operaciones correspondientes realizadas.
 def resumen():
-    print("\n■ \033[1mRESUMEN:\033[0m") # Título.
+    print("\n■ \033[1mRESUMEN\033[0m") # Título.
+
+    # Verificar si hay datos cargados.
+    if not articulos:
+        print("\nNo hay artículos cargados.\n")
+        return  # Salir de la función si no hay datos cargados.
 
     # Diccionario para almacenar la cantidad vendida, importe total y promedio por tipo de producto.
     tipos_vendidos = {}

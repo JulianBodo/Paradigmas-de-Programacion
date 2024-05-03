@@ -81,7 +81,7 @@ def resumen():
     for tipo, info in tipos_vendidos.items():
         print(f"\n  ▹ Tipo de artículo: {tipo}")
         print(f"  ▹ Cantidad Vendida: {info['Cantidad Vendida']}")
-        print(f"  ▹ Importe Total: ${info['Importe Total']}")
+        print(f"  ▹ Importe Total: ${info['Importe Total']:.2f}")
         print(f"  ▹ Importe Promedio: ${info['Importe Promedio']:.2f}")
 
     while True:
